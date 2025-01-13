@@ -178,6 +178,7 @@ func (j *RunJob) buildContainer() (*docker.Container, error) {
 		HostConfig: &docker.HostConfig{
 			Binds: j.Volume,
 		},
+		Name: fmt.Sprint("ofelia_", j.Name),
 	})
 
 	if err != nil {
